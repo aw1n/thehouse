@@ -9,6 +9,8 @@
     <meta name="author" content="">
     <link rel="icon" href="http://getbootstrap.com/favicon.ico">
 
+    {% load staticfiles %}
+
     <title>Dashboard Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
@@ -18,7 +20,7 @@
     <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
 
  	<!-- Personal Syle Overriting Theirs -->
- 	<link href="style.css" rel="stylesheet">
+	<link href="{% static "thehouse/style.css" %}" rel="stylesheet">
   </head>
 
   <body>
@@ -52,7 +54,7 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li class="active"><a href="main.html">Home<span class="sr-only">(current)</span></a></li>
-            <li><a href="ledger.html">Ledger</a></li>
+	    <li><a href="{% url 'ledger' %}">Ledger</a></li>
             <li><a href="schedule.html">Schedule</a></li>
             <li><a href="shopping_list.html">Shopping List</a></li>
             <li><a href="chores.html">Chores</a></li>
